@@ -17,6 +17,7 @@
 		"yargs": "^17.7.2"
 	},
 	"dependencies": {
-		"commander": "^11.1.0"
+		"commander": "^11.1.0",
+		"nanoid": "^5.0.4"
 	}
 }

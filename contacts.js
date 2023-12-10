@@ -1,5 +1,6 @@
 import path from 'path';
 import * as fs from 'fs/promises';
+import { nanoid } from 'nanoid';
 const p = path.resolve('db', 'contacts.json');
 
 export const listContacts = async () => {
@@ -7,7 +8,7 @@ export const listContacts = async () => {
 	return JSON.parse(data);
 };
 export const addContact = async ({ name, email, phone }) => {
-	const data = { name, email, phone };
+	const data = { id: nanoid(), name, email, phone };
 	const allData = await listContacts();
 	allData.push(data);
 	fs.writeFile(p, JSON.stringify(allData, null, 2));
